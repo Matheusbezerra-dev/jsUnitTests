@@ -27,8 +27,11 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(1)).toMatchObject({ radius: 1, area: 3.14, circumference: 6.28 });
     expect(circle(1)).toHaveProperty('radius', 'area', 'circumference');
     expect(circle(2)).toHaveProperty('circumference', 12.56);
-    expect(circle(3).area).toBeCloseTo(28.26, 0.02);
-    expect(circle(3).area).toBeCloseTo(28.26, 0.02);
+    expect(circle(3).area).toBeCloseTo(28.26);
+    const circulo = circle(3);
+    const area = parseFloat((circulo.area).toPrecision(4));
+    circulo.area = area;
+    expect(circulo).toEqual({ radius: 3, area: 28.26, circumference: 18.84 })
 
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.1
