@@ -36,11 +36,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(productDetails.length).toBe(2);
     expect(typeof (productDetails('Alcool gel', 'Máscara')[0])).toBe('object');
     expect(typeof (productDetails('Alcool gel', 'Máscara')[1])).toBe('object');
-    expect(productDetails('Alcool gel', 'Máscara')[0]).not.toEqual(productDetails('Alcool gel', 'Máscara')[1]);
+    expect(productDetails('Alcool gel')[0]).not.toEqual(productDetails('Máscara')[1]);
     const productIdsOne = productDetails('Alcool gel', 'Máscara')[0].details.productId;
     const productIdsTwo = productDetails('Alcool gel', 'Máscara')[1].details.productId;
     expect(productIdsOne.endsWith('123')).toBe(true);
     expect(productIdsTwo.endsWith('123')).toBe(true);
+    
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.1
     // Teste se o retorno da função é um array.2
